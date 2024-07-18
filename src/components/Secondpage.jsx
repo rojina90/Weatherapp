@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { FaChevronLeft } from "react-icons/fa6";
 import "./first.css";
+import rectangle from "../assets/img/Rectangle 1.svg";
 
 const Secondpage = () => {
   const [input, setInput] = useState("");
@@ -95,7 +96,7 @@ const Secondpage = () => {
         </div>
         {data?.forecast?.forecastday[0].hour?.map((item) => (
           <div className="firstsec">
-            <img src="./assets/img/Rectangle 1.svg" alt="" />
+            <img src={rectangle} alt="" />
             <div className="content">
               <h1>{item.temp_c}°</h1>
               <h4 style={{ color: "rgba(235, 235, 245, 0.6)" }}>H:24° L:18°</h4>
@@ -108,7 +109,7 @@ const Secondpage = () => {
                   src={item?.condition?.icon}
                   alt=""
                 />
-                <p>Mid Rain</p>
+                <p>{item.condition.text}</p>
               </div>
             </div>
           </div>

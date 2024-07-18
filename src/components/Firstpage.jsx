@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./first.css";
-
+import house from "../assets/img/house.svg";
 const Firstpage = () => {
   const [data, setData] = useState([]);
 
@@ -29,7 +29,7 @@ const Firstpage = () => {
             src="https://images.pexels.com/photos/591644/nature-landscape-stars-constellations-591644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           />
 
-          <img src="./assets/img/house.svg" alt="" id="house" />
+          <img src={house} alt="" id="house" />
           <div className="temperature">
             <h1>{data?.location?.name}</h1>
             <h2>{data?.current?.temp_c}</h2>
