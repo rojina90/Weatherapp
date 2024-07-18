@@ -15,18 +15,19 @@
   --pink: rgba(196, 39, 251, 1);
   --solid-white: rgba(224, 217, 255, 1);
 }
-
+body {
+  background: linear-gradient(
+    90deg,
+    rgba(120, 17, 216, 0.41) 0%,
+    rgba(13, 17, 228, 0) 99%
+  );
+}
 section {
   display: flex;
   justify-content: center;
   padding-top: 10px;
   font-family: sans-serif;
   height: 100vh;
-  background: linear-gradient(
-    259.82deg,
-    rgba(128, 91, 202, 0.41) 37.29%,
-    rgba(129, 131, 247, 0) 68.81%
-  );
 }
 .image-sec {
   position: relative;
@@ -51,10 +52,11 @@ section {
 .temperature {
   position: absolute;
   top: 30px;
-  left: 120px;
+  left: 95px;
   color: #fff;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .temperature h1 {
   font-size: 34px;
@@ -138,6 +140,6 @@ span {
   width: 100%;
   display: flex;
   flex-wrap: nowrap; /* Prevent items from wrapping */
-  overflow-x: scroll; 
-  scrollbar-width: none;/* Enable horizontal scrolling */
+  overflow-x: scroll;
+  scrollbar-width: none; /* Enable horizontal scrolling */
 }

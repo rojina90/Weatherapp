@@ -1,14 +1,15 @@
 import React from "react";
-import Secondpage from "./components/Secondpage";
-import Firstpage from "./components/Firstpage";
+
 import "./weather.css";
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from "./routes/AppRoutes";
 
 const App = () => {
   return (
-    <div>
-      <Secondpage />
-      <Firstpage />
-    </div>
+    <BrowserRouter>
+    
+      <AppRoutes />
+    </BrowserRouter>
   );
 };
 

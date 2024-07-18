@@ -39,6 +39,8 @@ body {
   font-family: SF Pro Display, sans-serif;
   overflow-y: scroll;
   scrollbar-width: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .background {
   margin-top: 10px;

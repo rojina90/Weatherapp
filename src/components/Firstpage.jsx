@@ -1,17 +1,24 @@
 import React, { useEffect, useState } from "react";
 import "./first.css";
 import house from "../assets/img/house.svg";
-const Firstpage = () => {
+import { FaMagnifyingGlass } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
+
+const Firstpage = ({ country }) => {
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
     const response = await fetch(
-      "https://api.weatherapi.com/v1/forecast.json?q=london&days=7&dt=2024-07-17&key=0a72a01535cd4aaeac384408241707"
+      `https://api.weatherapi.com/v1/forecast.json?q=${country}&days=7&dt=2024-07-17&key=0a72a01535cd4aaeac384408241707`
     );
     const result = await response.json();
     setData(result);
   };
-
+  const handleSearch = () => {
+    console.log("search");
+    navigate("/second");
+  };
   useEffect(() => {
     fetchData();
   }, []);
@@ -30,6 +37,18 @@ const Firstpage = () => {
           />
 
           <img src={house} alt="" id="house" />
+          <div
+            className="icon"
+            style={{
+              position: "absolute",
+              top: "20px",
+              right: "40px",
+              color: "white",
+              fontSize: "17px",
+            }}
+          >
+            <FaMagnifyingGlass onClick={handleSearch} />
+          </div>
           <div className="temperature">
             <h1>{data?.location?.name}</h1>
             <h2>{data?.current?.temp_c}</h2>

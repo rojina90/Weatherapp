@@ -3,12 +3,13 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 import { FaChevronLeft } from "react-icons/fa6";
 import "./first.css";
 import rectangle from "../assets/img/Rectangle 1.svg";
+import { useNavigate } from "react-router-dom";
 
-const Secondpage = () => {
+const Secondpage = ({ country, setCountry }) => {
+  const navigate = useNavigate();
   const [input, setInput] = useState("");
   const [data, setData] = useState([]);
   const [searchedData, setSearchedData] = useState([]);
-  const [country, setCountry] = useState("");
 
   const fetchData = async () => {
     const response = await fetch(
@@ -17,9 +18,15 @@ const Secondpage = () => {
     const result = await response.json();
     setData(result);
   };
+  const handleFirstButton = () => {
+    console.log("first");
+    navigate("/");
+  };
 
   useEffect(() => {
-    fetchData();
+    if (country) {
+      fetchData();
+    }
   }, [country]);
 
   const fetchSearch = async (input) => {
@@ -31,6 +38,10 @@ const Secondpage = () => {
     // console.log(result);
   };
 
+  const handleBackButton = () => {
+    console.log("back");
+    navigate("/");
+  };
   useEffect(() => {
     if (input !== "") {
       fetchSearch(input);
@@ -60,7 +71,7 @@ const Secondpage = () => {
                   color: "rgba(235, 235, 245, 0.6)",
                 }}
               >
-                <FaChevronLeft />
+                <FaChevronLeft onClick={handleBackButton} />
               </span>
               Weather
             </div>
@@ -94,26 +105,28 @@ const Secondpage = () => {
             )}
           </div>
         </div>
-        {data?.forecast?.forecastday[0].hour?.map((item) => (
-          <div className="firstsec">
+        {/* {data?.forecast?.forecastday[0].hour?.map((item) => ( */}
+        {data.length !== 0 && (
+          <div className="firstsec" onClick={handleFirstButton}>
             <img src={rectangle} alt="" />
             <div className="content">
-              <h1>{item.temp_c}°</h1>
+              <h1>{data?.current?.temp_c}°</h1>
               <h4 style={{ color: "rgba(235, 235, 245, 0.6)" }}>H:24° L:18°</h4>
-              <h3>{country}</h3>
+              <h3>{data?.location?.name}</h3>
 
               <div className="cel">
                 {" "}
                 <img
                   style={{ fontSize: "200px" }}
-                  src={item?.condition?.icon}
+                  src={data?.current?.condition?.icon}
                   alt=""
                 />
-                <p>{item.condition.text}</p>
+                <p>{data?.current?.condition.text}</p>
               </div>
             </div>
           </div>
-        ))}
+        )}
+        {/* ))} */}
       </div>
     </div>
   );
