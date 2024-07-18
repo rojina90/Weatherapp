@@ -45,6 +45,7 @@ const Firstpage = ({ country }) => {
               right: "40px",
               color: "white",
               fontSize: "17px",
+              cursor: "pointer",
             }}
           >
             <FaMagnifyingGlass onClick={handleSearch} />

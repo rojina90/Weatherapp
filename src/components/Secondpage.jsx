@@ -57,7 +57,7 @@ const Secondpage = ({ country, setCountry }) => {
               style={{
                 color: "#ffffff",
                 padding: " 16px",
-                fontSize: "29px",
+                fontSize: "30px",
                 lineHeight: "34px",
                 paddingTop: "30px",
                 display: "flex",
@@ -69,6 +69,7 @@ const Secondpage = ({ country, setCountry }) => {
                 style={{
                   fontSize: "21px",
                   color: "rgba(235, 235, 245, 0.6)",
+                  cursor: "pointer",
                 }}
               >
                 <FaChevronLeft onClick={handleBackButton} />

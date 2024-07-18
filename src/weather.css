@@ -15,8 +15,8 @@
 body {
   background: linear-gradient(
     90deg,
-    rgba(17, 30, 216, 0.41) 0%,
-    rgba(13, 17, 228, 0) 99%
+    rgba(12, 9, 240, 0.41) 10%,
+    rgba(100, 102, 176, 0) 90%
   );
 }
 /* .bg {
