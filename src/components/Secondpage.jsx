@@ -95,7 +95,7 @@ const Secondpage = () => {
         </div>
         {data?.forecast?.forecastday[0].hour?.map((item) => (
           <div className="firstsec">
-            <img src="src\assets\img\Rectangle 1.svg" alt="" />
+            <img src="./assets/img/Rectangle 1.svg" alt="" />
             <div className="content">
               <h1>{item.temp_c}°</h1>
               <h4 style={{ color: "rgba(235, 235, 245, 0.6)" }}>H:24° L:18°</h4>
