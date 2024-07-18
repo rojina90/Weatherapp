@@ -18,8 +18,8 @@
 body {
   background: linear-gradient(
     90deg,
-    rgba(120, 17, 216, 0.41) 0%,
-    rgba(13, 17, 228, 0) 99%
+    rgba(20, 17, 216, 0.41) 0%,
+    rgba(100, 102, 176, 0) 99%
   );
 }
 section {
@@ -114,6 +114,7 @@ span {
   padding-top: 15px;
   padding: 10px;
 }
+
 .list {
   display: flex;
   flex-direction: column;

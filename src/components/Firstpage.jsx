@@ -59,7 +59,17 @@ const Firstpage = ({ country }) => {
             </span>
           </div>
           <div className="forecast">
-            <p>Hourly ForeCast</p>
+            <p
+              style={{
+                textAlign: "center",
+                fontSize: "20px",
+                fontWeight: "800",
+                marginTop: "10px",
+                letterSpacing: "0.43",
+              }}
+            >
+              Hourly ForeCast
+            </p>
             {/* <span>Weekly ForeCast</span> */}
             <div className="items">
               {data?.forecast?.forecastday[0]?.hour?.map((item) => {
